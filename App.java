@@ -1,35 +1,28 @@
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
-        BluePen bluePen=new BluePen();
-        bluePen.write("ballpen");
-        bluePen.check("Red");
-        
+        KaraTest karaTest=new KaraTest();
+        karaTest.KungFuMaster();
     }
 }
-class Pen{
-    
-}
-class BluePen extends Pen{
+class KaratMaster{
+  public  void  knockDown(){
 
-
-    String LinkType;
-    String PenType;
-   /*  public BluePen(String linkType, String penType) {
-        LinkType = linkType;
-       PenType = penType;
-    }*/
-    void write(String PenType){
-        
-        System.out.println(PenType+"is working ");
     }
-    void check(String linkType){
-        this.LinkType=linkType;
-        if(LinkType.equals("Red")){
-            System.out.println("its is a red link");
-        }else{
-            System.out.println("the pen is not red pen");
+
+}
+class KaraTest{
+     void KungFuMaster() throws KnockDownException{
+        for(int i=0;i<20;i++){
+            double val=Math.random()%10;
+            if(val>0.90){
+                throw new  KnockDownException("ohh! he fallen");
+            }
+            else{
+                if(val<0.30){
+                    throw new FallenException("ohh sh/he fallen");
+                }
+            }
         }
-    }
-
+     }
 }
